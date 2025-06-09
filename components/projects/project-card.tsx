@@ -52,7 +52,7 @@ export default function ProjectCard({
         <h3 className="text-2xl md:text-3xl font-semibold">{project.title}</h3>
         <p className="text-gray-400">{project.description}</p>
         <div className="flex flex-wrap gap-2">
-          {project.techStack.map((tech: string, i: number) => (
+          {project.tech.map((tech: string, i: number) => (
             <span
               key={i}
               className="bg-gray-800 text-sm text-white px-3 py-1 rounded-full"
@@ -62,10 +62,10 @@ export default function ProjectCard({
           ))}
         </div>
         <a
-          href={project.demoLink}
+          href={project.liveLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-blue-600 hover:bg-blue-700 transition text-white px-5 py-2 rounded-md font-medium"
+          className="inline-block bg-[#335CFF] hover:bg-[#335CFF] text-white p-[10px] rounded-[10px] transition  font-medium"
         >
           View Live Demo
         </a>

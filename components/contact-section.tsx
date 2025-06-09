@@ -142,19 +142,25 @@ const ContactSection: React.FC = () => {
               {/* Social Links */}
               <div className="flex space-x-4 pt-4">
                 <a
-                  href="#"
+                  href="https://github.com/odomfavour"
+                  target="_blank"
+                  rel="no-referrer"
                   className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-800 text-gray-300 transition-all hover:bg-gray-700 hover:text-white"
                 >
                   <GitHubIcon className="h-6 w-6" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/ogochukwu-odom-75b2072a3/"
+                  target="_blank"
+                  rel="no-referrer"
                   className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-800 text-gray-300 transition-all hover:bg-gray-700 hover:text-white"
                 >
                   <LinkedInIcon className="h-6 w-6" />
                 </a>
                 <a
-                  href="#"
+                  href="https://x.com/godsfavourodom"
+                  target="_blank"
+                  rel="no-referrer"
                   className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-800 text-gray-300 transition-all hover:bg-gray-700 hover:text-white"
                 >
                   <XIcon className="h-6 w-6" />

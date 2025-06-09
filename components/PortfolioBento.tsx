@@ -2,6 +2,7 @@
 
 'use client';
 
+import { featuredProjects } from '@/utils/data';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -65,7 +66,7 @@ const projects = [
 
 export default function FeaturedProjects() {
   // Create multiple sets of projects for continuous scroll
-  const projectSets = [projects, projects, projects];
+  const projectSets = [featuredProjects, featuredProjects, featuredProjects];
 
   return (
     <section className="py-8 px-6 md:px-20">

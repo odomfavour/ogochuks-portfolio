@@ -47,18 +47,24 @@ const testimonials = [
 ];
 
 export default function TestimonialsCarousel() {
-  const [activeIndex, setActiveIndex] = useState(2); // Start with middle testimonial
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [isPaused, setIsPaused] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number>(2);
+  const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(true);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [windowWidth, setWindowWidth] = useState<number>(0);
 
-  // Auto-rotation effect
+  // Get window width for responsiveness
+  useEffect(() => {
+    const updateWidth = () => setWindowWidth(window.innerWidth);
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
+
   useEffect(() => {
     if (!isAutoPlaying || isPaused) return;
-
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000); // Change every 5 seconds
-
+    }, 5000);
     return () => clearInterval(interval);
   }, [isAutoPlaying, isPaused]);
 
@@ -72,7 +78,7 @@ export default function TestimonialsCarousel() {
     setActiveIndex((prev) => (prev + 1) % testimonials.length);
   };
 
-  const handleImageClick = (index) => {
+  const handleImageClick = (index: number) => {
     setActiveIndex(index);
   };
 
@@ -80,11 +86,10 @@ export default function TestimonialsCarousel() {
     setIsAutoPlaying(!isAutoPlaying);
   };
 
-  const getImagePosition = (index) => {
+  const getImagePosition = (index: number): number => {
     const diff = index - activeIndex;
     const totalItems = testimonials.length;
 
-    // Normalize the difference to handle circular array
     let normalizedDiff = diff;
     if (Math.abs(diff) > totalItems / 2) {
       normalizedDiff = diff > 0 ? diff - totalItems : diff + totalItems;
@@ -93,27 +98,22 @@ export default function TestimonialsCarousel() {
     return normalizedDiff;
   };
 
-  const getImageStyle = (index: number) => {
+  const getImageStyle = (index: number): React.CSSProperties => {
     const position = getImagePosition(index);
     const isActive = index === activeIndex;
 
-    // Responsive spacing based on screen size
-    const spacing =
-      window.innerWidth < 640 ? 80 : window.innerWidth < 1024 ? 100 : 120;
+    const spacing = windowWidth < 640 ? 80 : windowWidth < 1024 ? 100 : 120;
 
-    // Base styles
     let transform = `translateX(${position * spacing}px)`;
     let scale = isActive ? 1.2 : 0.8;
     let zIndex = isActive ? 10 : 5 - Math.abs(position);
     let opacity = Math.abs(position) > 2 ? 0 : isActive ? 1 : 0.6;
 
-    // Adjust for side positions
     if (Math.abs(position) === 1) {
       scale = 0.9;
     }
 
-    // Hide images beyond certain positions on mobile
-    if (window.innerWidth < 640 && Math.abs(position) > 1) {
+    if (windowWidth < 640 && Math.abs(position) > 1) {
       opacity = 0;
     }
 
@@ -128,7 +128,7 @@ export default function TestimonialsCarousel() {
   return (
     <div className="text-white my-8 sm:my-12 lg:my-[50px]">
       <div className="max-w-[1440px] mx-auto">
-        <div className="w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-11/12 mx-auto">
           <div
             className="py-6 sm:py-8 lg:py-[25px] text-center rounded-lg sm:rounded-xl"
             style={{
@@ -192,7 +192,7 @@ export default function TestimonialsCarousel() {
                   {testimonials[activeIndex].role}
                 </p>
                 <blockquote className="text-base sm:text-lg lg:text-xl leading-relaxed text-white italic px-2 sm:px-4">
-                  "{testimonials[activeIndex].quote}"
+                  &quot;{testimonials[activeIndex].quote}&quot;
                 </blockquote>
               </div>
             </div>

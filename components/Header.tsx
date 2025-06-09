@@ -1,70 +1,146 @@
 'use client';
-
-import Link from 'next/link';
-import React, { useState } from 'react';
-import { FaHamburger, FaFirstOrderAlt } from 'react-icons/fa';
-import { GiHamburgerMenu } from 'react-icons/gi';
-// import { Link as ScrollLink } from 'react-scroll';
-import { usePathname, useRouter } from 'next/navigation';
-import { navLinks } from '@/utils/data';
-import MobileNav from './MobileNav';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
-const Header = () => {
+export default function Header() {
   const pathname = usePathname();
-  const [openMobile, setOpenMobile] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const navLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/#about', label: 'About' },
+    { href: '/portfolio', label: 'Portfolio' },
+    { href: '/#contact', label: 'Contact' },
+  ];
+
   return (
-    <div className="w-full  top-0 z-40 left-0 fixed bg-[#0E121B] flex justify-center shadow-lg shadow-[rgba(0,0,0,0.025)] font-jost">
-      <div className="w-11/12 mx-auto">
-        <div className="flex justify-between items-center py-5 ">
-          <Link href="/" className="flex items-center text-2xl gap-0.5">
-            <div className="relative h-[32px] w-[150px]">
-              <Image src="/brand.svg" alt="brand" fill />
-            </div>
-          </Link>
-          <ul className="md:flex items-center text-white gap-12 hidden">
-            {navLinks.map((itemLink) => (
-              <li key={itemLink.id}>
+    <div className="">
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0E121B] ${
+          isScrolled
+            ? 'bg-[#0E121B] backdrop-blur-md shadow-lg border-b border-white/10'
+            : ' border-b border-white/5'
+        }`}
+      >
+        <nav className="max-w-[1440px] mx-auto">
+          <div className="w-11/12 mx-auto">
+            <div className="flex items-center justify-between py-[18px]">
+              {/* Logo */}
+              <Link href="/" className="flex items-center text-2xl gap-0.5">
+                <div className="relative h-[32px] w-[150px]">
+                  <Image src="/brand.svg" alt="brand" fill />
+                </div>
+              </Link>
+
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex items-center space-x-8">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`text-gray-300 hover:text-white transition-all duration-200 relative group py-2 ${
+                      pathname === link.href
+                        ? 'font-semibold text-white after:content-[""] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-gradient-to-r after:from-indigo-500 after:to-purple-600'
+                        : ''
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Download Button */}
+              <div className="hidden md:block">
                 <Link
-                  href={itemLink.url}
-                  className={`text-lg font-medium pb-2 ${
-                    pathname === itemLink.url ? 'border-b border-[#C0D5FF]' : ''
-                  }`}
+                  href="#projects"
+                  className="inline-block bg-[#335CFF] hover:bg-[#335CFF] text-white p-[10px] rounded-[10px] transition text-sm"
                 >
-                  {itemLink.name}
+                  Download Resume
                 </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="md:flex gap-4 hidden">
-            <Link
-              href="#projects"
-              className="inline-block bg-[#335CFF] hover:bg-[#335CFF] text-white p-[10px] rounded-[10px] transition text-sm"
+              </div>
+
+              {/* Mobile Menu Toggle */}
+              <button
+                onClick={toggleMobileMenu}
+                className="md:hidden text-white hover:text-gray-300 transition-colors duration-200 p-2"
+              >
+                <svg
+                  className={`w-6 h-6 transform transition-transform duration-300 ${
+                    isMobileMenuOpen ? 'rotate-90' : ''
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {isMobileMenuOpen ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  )}
+                </svg>
+              </button>
+            </div>
+
+            {/* Mobile Menu */}
+            <div
+              className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+                isMobileMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+              }`}
             >
-              Download Resume
-            </Link>
-            {/* <ScrollLink
-              to="contact"
-              smooth={true}
-              duration={500}
-              activeClass="font-bold text-[#F37B23]"
-              className="bg-[#F37B23] rounded px-7 py-[6px] font-semibold text-base text-white cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-[#f37a23da]  duration-300"
-            >
-              Hire Me
-            </ScrollLink> */}
+              <div className="py-4 space-y-2 border-t border-white/10">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`block px-4 py-3 rounded-lg transition-all duration-200 ${
+                      pathname === link.href
+                        ? 'text-white bg-white/10 font-semibold'
+                        : 'text-gray-300 hover:text-white hover:bg-white/5'
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <div className="pt-2">
+                  <Link
+                    href="#projects"
+                    className="inline-block bg-[#335CFF] hover:bg-[#335CFF] text-white p-[10px] rounded-[10px] transition text-sm"
+                  >
+                    Download Resume
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="hamburger cursor-pointer md:hidden block">
-            <GiHamburgerMenu
-              role="button"
-              className="text-[#F37B23] text-3xl"
-              onClick={() => setOpenMobile(true)}
-            />
-          </div>
-        </div>
-      </div>
-      {openMobile && <MobileNav handleClose={() => setOpenMobile(false)} />}
+        </nav>
+      </header>
     </div>
   );
-};
-
-export default Header;
+}
