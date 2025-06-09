@@ -6,63 +6,63 @@ import { featuredProjects } from '@/utils/data';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const projects = [
-  {
-    title: 'Kitchen Diary',
-    description:
-      'A website where users can create their recipe and print them in a beautiful A4 paper',
-    tech: ['ReactJS', 'Tailwind', 'Typescript', 'CSS'],
-    image: '/projects/kitchendiary.png',
-    liveLink: '#',
-    codeLink: '#',
-    size: 'col-span-1 row-span-2',
-  },
-  {
-    title: 'Car Showcase',
-    description: 'Interactive web wireframe design for prototyping.',
-    tech: ['HTML', 'CSS', 'UX'],
-    image: '/projects/car-showcase.png',
-    liveLink: '#',
-    codeLink: '#',
-    size: 'col-span-1 row-span-1',
-  },
-  {
-    title: 'Delta7',
-    description: 'Freelance workspace dashboard design.',
-    tech: ['VueJS', 'Firebase'],
-    image: '/projects/delta7.png',
-    liveLink: '#',
-    codeLink: '#',
-    size: 'col-span-1 row-span-2',
-  },
-  {
-    title: 'MC Holly',
-    description: 'Construction planning dashboard with 3D views.',
-    tech: ['React', 'Three.js'],
-    image: '/projects/mc-holly.png',
-    liveLink: '#',
-    codeLink: '#',
-    size: 'col-span-1 row-span-2',
-  },
-  {
-    title: 'Weather',
-    description: 'A minimalist blog reading app.',
-    tech: ['Next.js', 'Tailwind'],
-    image: '/projects/weather.png',
-    liveLink: '#',
-    codeLink: '#',
-    size: 'col-span-1',
-  },
-  {
-    title: 'Fhenix',
-    description: 'A minimalist blog reading app.',
-    tech: ['Next.js', 'Tailwind'],
-    image: '/projects/fhenix.png',
-    liveLink: '#',
-    codeLink: '#',
-    size: 'col-span-1',
-  },
-];
+// const projects = [
+//   {
+//     title: 'Kitchen Diary',
+//     description:
+//       'A website where users can create their recipe and print them in a beautiful A4 paper',
+//     tech: ['ReactJS', 'Tailwind', 'Typescript', 'CSS'],
+//     image: '/projects/kitchendiary.png',
+//     liveLink: '#',
+//     codeLink: '#',
+//     size: 'col-span-1 row-span-2',
+//   },
+//   {
+//     title: 'Car Showcase',
+//     description: 'Interactive web wireframe design for prototyping.',
+//     tech: ['HTML', 'CSS', 'UX'],
+//     image: '/projects/car-showcase.png',
+//     liveLink: '#',
+//     codeLink: '#',
+//     size: 'col-span-1 row-span-1',
+//   },
+//   {
+//     title: 'Delta7',
+//     description: 'Freelance workspace dashboard design.',
+//     tech: ['VueJS', 'Firebase'],
+//     image: '/projects/delta7.png',
+//     liveLink: '#',
+//     codeLink: '#',
+//     size: 'col-span-1 row-span-2',
+//   },
+//   {
+//     title: 'MC Holly',
+//     description: 'Construction planning dashboard with 3D views.',
+//     tech: ['React', 'Three.js'],
+//     image: '/projects/mc-holly.png',
+//     liveLink: '#',
+//     codeLink: '#',
+//     size: 'col-span-1 row-span-2',
+//   },
+//   {
+//     title: 'Weather',
+//     description: 'A minimalist blog reading app.',
+//     tech: ['Next.js', 'Tailwind'],
+//     image: '/projects/weather.png',
+//     liveLink: '#',
+//     codeLink: '#',
+//     size: 'col-span-1',
+//   },
+//   {
+//     title: 'Fhenix',
+//     description: 'A minimalist blog reading app.',
+//     tech: ['Next.js', 'Tailwind'],
+//     image: '/projects/fhenix.png',
+//     liveLink: '#',
+//     codeLink: '#',
+//     size: 'col-span-1',
+//   },
+// ];
 
 export default function FeaturedProjects() {
   // Create multiple sets of projects for continuous scroll

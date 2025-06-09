@@ -1,6 +1,7 @@
+/*eslint-disable*/
 'use client';
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 
 const testimonials = [
@@ -82,9 +83,9 @@ export default function TestimonialsCarousel() {
     setActiveIndex(index);
   };
 
-  const toggleAutoPlay = () => {
-    setIsAutoPlaying(!isAutoPlaying);
-  };
+  // const toggleAutoPlay = () => {
+  //   setIsAutoPlaying(!isAutoPlaying);
+  // };
 
   const getImagePosition = (index: number): number => {
     const diff = index - activeIndex;

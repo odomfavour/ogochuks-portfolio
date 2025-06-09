@@ -2,20 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-// Logo Icon (geometric cube design)
-const LogoIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" className={className} fill="currentColor">
-    <path
-      d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-      stroke="currentColor"
-      strokeWidth="2"
-      fill="none"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
 interface NavigationItem {
   name: string;
   href: string;
