@@ -13,7 +13,10 @@ interface SkillCardProps {
 
 const SkillCard: React.FC<SkillCardProps> = ({ icon, title, delay }) => {
   const ref = useRef(null);
-  const inView = useInView(ref, { threshold: 0.3 });
+  const inView = useInView(ref, {
+    amount: 0.3, // This is the correct prop in framer-motion
+    once: true,
+  });
 
   return (
     <motion.div

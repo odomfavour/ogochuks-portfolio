@@ -13,7 +13,10 @@ export default function ProjectCard({
   index: number;
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { threshold: 0.2 });
+  const isInView = useInView(ref, {
+    amount: 0.2, // This is the correct prop in framer-motion
+    once: true,
+  });
   const controls = useAnimation();
 
   useEffect(() => {

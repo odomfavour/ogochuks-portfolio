@@ -5,7 +5,10 @@ import Image from 'next/image';
 
 const AboutSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { threshold: 0.2 });
+  const isInView = useInView(ref, {
+    amount: 0.3, // This is the correct prop in framer-motion
+    once: true,
+  });
   const controls = useAnimation();
 
   useEffect(() => {
