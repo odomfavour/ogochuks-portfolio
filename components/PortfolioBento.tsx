@@ -89,7 +89,7 @@ export default function FeaturedProjects() {
   ];
 
   return (
-    <section className="py-8 px-6 md:px-20">
+    <section className="py-8 px-6 md:px-20" id="portfolio">
       <div className="text-center mb-12">
         <p className="text-base font-semibold uppercase text-[#F2F2FF] mb-3">
           My Portfolio

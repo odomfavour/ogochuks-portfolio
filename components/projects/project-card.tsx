@@ -40,12 +40,12 @@ export default function ProjectCard({
       {/* Image */}
       <div className="w-full md:w-1/2">
         <div className="rounded-lg overflow-hidden shadow-lg">
-          <div className="relative h-[400px] w-full">
+          <div className="relative md:h-[400px] h-[300px] w-full">
             <Image
               src={project.image}
               alt={project.title}
               fill
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover object-top"
             />
           </div>
         </div>

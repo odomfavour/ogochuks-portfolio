@@ -11,7 +11,7 @@ export default function ProjectsSection() {
           <p className="text-indigo-400 text-sm font-semibold uppercase mb-2">
             Explore Projects
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-[30px] md:text-[40px] font-bold mb-4">
             Featured Projects
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">

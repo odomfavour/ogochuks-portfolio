@@ -35,13 +35,13 @@ export default function HeroSection() {
 
               <div className="flex gap-x-5">
                 <Link
-                  href="#projects"
+                  href="#portfolio"
                   className="inline-block bg-[#335CFF] hover:bg-[#335CFF] text-white p-[10px] rounded-[10px] transition text-sm"
                 >
                   View My Work
                 </Link>
                 <Link
-                  href="#projects"
+                  href="#contact"
                   className="inline-block border-[#E1E4EA] border text-white p-[10px] rounded-[10px] transition text-sm"
                 >
                   Let&apos;s Connect
