@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
         <div className="w-11/12 mx-auto">
           <div className="flex flex-col items-center justify-between space-y-6 md:flex-row md:space-y-0">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2">
               <Link href="/" className="flex items-center text-2xl gap-0.5">
                 <div className="relative h-[32px] w-[150px]">
                   <Image src="/brand.svg" alt="brand" fill />
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Navigation Links */}
-            <nav className="flex flex-wrap justify-center space-x-8 md:space-x-12">
+            <nav className="flex flex-wrap justify-center space-x-2 md:space-x-12">
               {navigationItems.map((item) => (
                 <a
                   key={item.name}

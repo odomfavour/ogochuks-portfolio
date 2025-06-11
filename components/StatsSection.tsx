@@ -120,10 +120,10 @@ const StatsSection: React.FC = () => {
         </div>
 
         {/* Mobile dividers - horizontal lines between stats on small screens */}
-        <div className="md:hidden">
+        {/* <div className="md:hidden">
           <div className="mt-8 mb-8 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
           <div className="mt-8 mb-8 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-        </div>
+        </div> */}
       </div>
     </section>
   );

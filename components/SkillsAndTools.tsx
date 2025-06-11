@@ -74,7 +74,9 @@ const SkillsAndTools: React.FC = () => {
               <p className="text-sm font-medium capitalize tracking-wider text-[#C0D5FF] mb-3">
                 Skills & Tools
               </p>
-              <h2 className="text-[40px] font-bold text-white mb-3">Tools</h2>
+              <h2 className="md:text-[40px] text-[32px] font-bold text-white mb-3">
+                Tools
+              </h2>
               <p className="text-base leading-relaxed font-normal text-[#CACFD8]">
                 Transforming innovative designs into compelling web applications
                 with 3+ years of expertise in React, Next.js, and modern

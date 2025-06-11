@@ -88,7 +88,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   iconBgColor,
   iconColor,
 }) => (
-  <div className="group relative overflow-hidden rounded-2xl border border-[#717784]  p-8 transition-all duration-300 hover:border-gray-700 hover:bg-gray-800/50 hover:shadow-xl hover:shadow-black/20 cursor-pointer">
+  <div className="group relative overflow-hidden rounded-2xl border border-[#717784]  p-6 transition-all duration-300 hover:border-gray-700 hover:bg-gray-800/50 hover:shadow-xl hover:shadow-black/20 cursor-pointer">
     <div className="mb-6">
       <div
         className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl ${iconBgColor} transition-transform duration-300 group-hover:scale-110`}
@@ -147,7 +147,9 @@ const ServicesSection: React.FC = () => {
             <p className="mb-3 text-base font-medium tracking-wider text-[#C0D5FF]">
               Services
             </p>
-            <h2 className="text-[48px] font-bold text-white">What I do</h2>
+            <h2 className="md:text-[48px] text-[32px] font-bold text-white">
+              What I do
+            </h2>
           </div>
 
           {/* Services Grid */}

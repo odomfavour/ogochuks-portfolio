@@ -9,24 +9,24 @@ export default function HeroSection() {
     <section className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-[#0E121B] text-white">
       <div className="w-11/12 mx-auto">
         {/* Text sliding from the left */}
-        <div className="flex md:flex-row flex-col-reverse items-center gap-8 pt-14">
+        <div className="flex md:flex-row flex-col-reverse items-center gap-8 lg:pt-14 pt-[100px]">
           <div className="lg:w-3/5 w-full">
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
-              className="text-center md:text-left"
+              className="text-left"
             >
-              <h1 className="text-[32px] font-bold text-[#B0B3B5] mb-5">
+              <h1 className="md:text-[32px] text-[28px] font-bold text-[#B0B3B5] mb-5">
                 Hi there! I’m{' '}
                 <span className="text-[#C0D5FF]">Ogochukwu Odom</span>
               </h1>
-              <h3 className="text-white font-bold text-[48px] leading-[56px]">
+              <h3 className="text-white font-bold md:text-[48px] mb-3 text-[30px] md:leading-[56px] leading-[40px]">
                 Frontend Engineer
                 <br />
                 Crafting Digital Experiences
               </h3>
-              <p className="text-lg text-[#E1E4EA] mb-8 leading-[24px">
+              <p className="md:text-lg text-[#E1E4EA] mb-8 leading-[24px]">
                 Transforming innovative designs into compelling web applications
                 with 3+ years of
                 <br /> expertise in React, Next.js, and modern frontend
@@ -54,7 +54,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className="w-full h-[640px] relative"
+              className="w-11/12 mx-auto md:h-[640px] h-[300px] relative"
             >
               <Image
                 src="/ogo.png" // Replace with your image path

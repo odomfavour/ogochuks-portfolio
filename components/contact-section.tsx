@@ -77,13 +77,13 @@ const ContactSection: React.FC = () => {
             <div className="">
               {/* Header */}
               <div>
-                <p className="mb-4 text-sm font-medium uppercase tracking-wider text-[#C0D5FF] mb-3">
+                <p className="text-sm font-medium uppercase tracking-wider text-[#C0D5FF] mb-3">
                   Contact Me
                 </p>
-                <h2 className="mb-6 text-5xl font-bold text-white md:text-[40px]">
+                <h2 className="mb-6 text-[32px] font-bold text-white md:text-[40px]">
                   Get in Touch
                 </h2>
-                <p className="text-lg text-[#B0B3B5] leading-[24px] mb-6">
+                <p className="md:text-lg text-base text-[#B0B3B5] leading-[24px] mb-6">
                   I&apos;m always open to new opportunities and collaborations.
                   Whether you have a question or just want to say hi, feel free
                   to reach out!
@@ -104,7 +104,7 @@ const ContactSection: React.FC = () => {
                     <EmailIcon className="h-6 w-6 text-gray-300" />
                   </div>
                   <div>
-                    <p className="text-lg font-normal text-gray-400">
+                    <p className="md:text-lg font-normal text-gray-400">
                       Email Me
                     </p>
                     <a
@@ -128,7 +128,9 @@ const ContactSection: React.FC = () => {
                     <PhoneIcon className="h-6 w-6 text-gray-300" />
                   </div>
                   <div>
-                    <p className="text-lg font-medium text-gray-400">Phone</p>
+                    <p className="md:text-lg font-medium text-gray-400">
+                      Phone
+                    </p>
                     <a
                       href="tel:+2348067488682"
                       className="text-base font-semibold text-[#C0D5FF] hover:text-[#C0D5FF] transition-colors"
