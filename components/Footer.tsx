@@ -9,9 +9,9 @@ interface NavigationItem {
 
 const Footer: React.FC = () => {
   const navigationItems: NavigationItem[] = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home', href: '/' },
     { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
+    { name: 'Portfolio', href: '/portfolio' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -34,13 +34,13 @@ const Footer: React.FC = () => {
             {/* Navigation Links */}
             <nav className="flex flex-wrap justify-center space-x-2 md:space-x-12">
               {navigationItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="text-white font-semibold text-base transition-colors duration-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-950 rounded-sm px-1 py-1"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </nav>
 

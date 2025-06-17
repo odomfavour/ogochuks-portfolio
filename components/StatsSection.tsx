@@ -100,7 +100,7 @@ const StatsSection: React.FC = () => {
   return (
     <section className=" py-10 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-12 lg:grid-cols-3">
           {stats.map((stat, index) => (
             <React.Fragment key={index}>
               <div className="relative flex justify-center">

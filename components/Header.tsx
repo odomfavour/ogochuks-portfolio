@@ -68,7 +68,8 @@ export default function Header() {
               {/* Download Button */}
               <div className="hidden md:block">
                 <Link
-                  href="#projects"
+                  href="/projects/ogochukwu--odoms-cv.pdf"
+                  download
                   className="inline-block bg-[#335CFF] hover:bg-[#335CFF] text-white p-[10px] rounded-[10px] transition text-sm"
                 >
                   Download Resume
@@ -130,7 +131,8 @@ export default function Header() {
                 ))}
                 <div className="pt-2">
                   <Link
-                    href="#projects"
+                    href="/projects/ogochukwu--odoms-cv.pdf"
+                    download
                     className="inline-block bg-[#335CFF] hover:bg-[#335CFF] text-white p-[10px] rounded-[10px] transition text-sm"
                   >
                     Download Resume
