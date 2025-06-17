@@ -24,13 +24,13 @@ const SkillCard: React.FC<SkillCardProps> = ({ icon, title, delay }) => {
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.6, delay }}
-      className="group relative overflow-hidden rounded-xl border border-gray-800 bg-gray-900/50 p-6 transition-all duration-300 hover:border-cyan-500/50 hover:bg-gray-800/50 hover:shadow-lg hover:shadow-cyan-500/20"
+      className="group relative overflow-hidden rounded-xl border border-gray-800 bg-gray-900/50 md:p-6 p-3 transition-all duration-300 hover:border-cyan-500/50 hover:bg-gray-800/50 hover:shadow-lg hover:shadow-cyan-500/20"
     >
       <div className="flex items-center space-x-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-400 transition-colors group-hover:bg-cyan-500/20 group-hover:text-cyan-300">
+        <div className="flex md:h-12 md:w-12 h-6 w-6 items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-400 transition-colors group-hover:bg-cyan-500/20 group-hover:text-cyan-300">
           {icon}
         </div>
-        <h3 className="text-xl font-semibold text-white group-hover:text-cyan-300 transition-colors">
+        <h3 className="md:text-xl text-base font-semibold text-white group-hover:text-cyan-300 transition-colors">
           {title}
         </h3>
       </div>
@@ -57,7 +57,7 @@ const SkillsAndTools: React.FC = () => {
           <div className="grid gap-12 flex-col-reverse lg:grid-cols-2 lg:gap-20">
             {/* Skills Grid */}
             <div>
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-4 grid-cols-2">
                 {skills.map((skill, index) => (
                   <SkillCard
                     key={index}

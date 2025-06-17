@@ -7,11 +7,11 @@ import Image from 'next/image';
 const testimonials = [
   {
     id: 1,
-    name: 'Sarah Johnson',
+    name: 'Bisi',
     role: 'Product Manager',
     image: 'pic-2.png',
     quote:
-      'Working with this team was exceptional. They delivered beyond our expectations and brought innovative solutions to complex challenges. The attention to detail was remarkable.',
+      'I highly recommend Ogochukwu for any web development project. He are highly skilled, professional, and always willing to go the extra mile to ensure that the project is completed on time',
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const testimonials = [
     role: 'CTO',
     image: 'pic-3.png',
     quote:
-      'The technical expertise and problem-solving skills demonstrated throughout our project were outstanding. They transformed our vision into a robust, scalable solution.',
+      "I was impressed with Ogochukwu's attention to detail and commitment to quality. They were able to quickly identify and fix any issues, and their code was clean and well-organized.",
   },
   {
     id: 3,
@@ -31,19 +31,35 @@ const testimonials = [
   },
   {
     id: 4,
-    name: 'David Wilson',
-    role: 'Startup Founder',
+    name: 'Tofunmi',
+    role: 'Product Manager',
     image: 'pic-4.png',
     quote:
-      'The creative approach and technical execution exceeded all our expectations. From concept to deployment, every phase was handled with professionalism and expertise.',
+      'Working with Ogochukwu and the other developers was a pleasure. They were highly communicative throughout the project, and always kept us informed of their progress. The end result was a beautiful and functional website that met all of our requirements.',
   },
   {
     id: 5,
-    name: 'Alex Thompson',
-    role: 'Marketing Director',
+    name: 'Aaron',
+    role: 'Developer',
     image: 'pic-2.png',
     quote:
-      'Incredible work ethic and communication throughout the project. The final product not only met our requirements but also introduced features that significantly improved user engagement.',
+      'I would highly recommend Ogochukwu to anyone looking for a reliable and skilled web developer. They are passionate about their work and always deliver top-notch results',
+  },
+  {
+    id: 6,
+    name: 'Chilo',
+    role: 'Senior Developer',
+    image: 'pic-2.png',
+    quote:
+      'I have worked with Ogochukwu on multiple projects, and he has consistently delivered high-quality work. He is always willing to listen to feedback and make changes as needed to ensure that the project meets expectations.',
+  },
+  {
+    id: 7,
+    name: 'Chidiogo',
+    role: 'Frontend Intern',
+    image: 'pic-2.png',
+    quote:
+      'Learning web development was sort of difficult for me but my story changed when I met Ogochuks as a mentor in an Internship. He explains things to the bare minimum',
   },
 ];
 

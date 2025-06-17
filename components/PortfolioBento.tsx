@@ -100,7 +100,7 @@ export default function FeaturedProjects() {
         <p className="mt-3 text-lg text-[#E1E4EA]">
           A showcase of my recent work and technical expertise
         </p>
-        <div className="mt-8 flex justify-center gap-4">
+        <div className="mt-8 flex justify-center md:gap-4 gap-3">
           <Link
             href="/portfolio"
             className="bg-primary hover:bg-blue-700 text-sm text-white p-[10px] rounded-[10px] cursor-pointer"
@@ -108,10 +108,11 @@ export default function FeaturedProjects() {
             View My Work
           </Link>
           <Link
-            href="#contact"
+            href="/projects/ogochukwu--odoms-cv.pdf"
+            download
             className="border border-white p-[10px] text-sm rounded-[10px] hover:bg-white text-white hover:text-black transition cursor-pointer"
           >
-            Let&apos;s Connect
+            Download Resume
           </Link>
         </div>
       </div>
@@ -189,14 +190,14 @@ export default function FeaturedProjects() {
                               >
                                 Live
                               </a>
-                              <a
+                              {/* <a
                                 href={project.codeLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="border border-white hover:bg-white hover:text-black px-2 py-0.5 rounded-[8px] text-xs"
                               >
                                 Code
-                              </a>
+                              </a> */}
                             </div>
                           </div>
                         </motion.div>
@@ -269,14 +270,14 @@ export default function FeaturedProjects() {
                       >
                         Live Demo
                       </a>
-                      <a
+                      {/* <a
                         href={project.codeLink}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="border border-white hover:bg-white hover:text-black px-3 py-1 rounded-[10px] text-sm"
                       >
                         View Code
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                 </motion.div>
