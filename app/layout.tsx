@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 import './globals.css';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import ClientLayout from '@/components/client-layout';
 
 const manrope = Manrope({
   variable: '--font-manrope',
@@ -25,8 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable}  antialiased`}>{children}</body>
-      <ToastContainer theme="dark" />
+      <body className={`${manrope.variable}  antialiased`}>
+        <ClientLayout>{children}</ClientLayout>
+      </body>
     </html>
   );
 }
